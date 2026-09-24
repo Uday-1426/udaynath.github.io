@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        (function () {
+            try {
+                var stored = localStorage.getItem("theme");
+                var prefersDark = window.matchMedia &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches;
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    stored || (prefersDark ? "dark" : "light")
+                );
+            } catch (e) {}
+        })();
+    </script>
+
+    <title>Contact · Gunda Uday Nath</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="subpage">
+
+    <header class="header" id="header">
+
+        <a href="index.html" class="header-name">
+            <span class="avatar avatar-sm">
+                <img src="images/profile/uday_main.png"
+                     alt="Gunda Uday Nath"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <span class="avatar-fallback">UN</span>
+            </span>
+            Gunda Uday Nath
+        </a>
+
+        <nav class="subpage-nav">
+            <a href="projects.html" class="nav-pill">Projects</a>
+            <a href="publications.html" class="nav-pill">Publications</a>
+            <a href="patents.html" class="nav-pill">Patents</a>
+            <a href="interests.html" class="nav-pill">Interests</a>
+            <a href="contact.html" class="nav-pill active">Contact me</a>
+        </nav>
+
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+            <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4.5"></circle>
+                <path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"></path>
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path>
+            </svg>
+        </button>
+
+    </header>
+
+
+    <main class="page">
+
+        <h1 class="page-title">
+            Contact
+        </h1>
+
+        <div class="contact-grid">
+
+
+            <!-- VISIT ME -->
+
+            <div class="contact-card">
+
+                <div class="icon-badge">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 21s7-6.5 7-11a7 7 0 1 0-14 0c0 4.5 7 11 7 11z"></path>
+                        <circle cx="12" cy="10" r="2.5"></circle>
+                    </svg>
+                </div>
+
+                <div class="contact-card-title">Visit Me</div>
+
+                <p class="contact-card-text">
+                    D-232, EEE Department, BITS Pilani,
+                    K. K. Birla Goa Campus
+                </p>
+
+                <a class="map-link"
+                   href="https://maps.app.goo.gl/XStbWrSpFqwAPcCZ7"
+                   target="_blank"
+                   rel="noopener">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 20l-5 2V6l5-2 6 2 5-2v16l-5 2-6-2z"></path>
+                        <path d="M9 4v16M15 6v16"></path>
+                    </svg>
+                    View on Map
+                </a>
+
+            </div>
+
+
+            <!-- CONNECT -->
+
+            <div class="contact-card">
+
+                <div class="icon-badge">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 8.6 8.6 0 0 1-3.9-.9L3 21l1.9-5.6A8.5 8.5 0 1 1 21 11.5z"></path>
+                    </svg>
+                </div>
+
+                <div class="contact-card-title">Connect</div>
+
+                <div class="contact-row">
+
+                    <span class="contact-row-icon">
+                        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                            <path d="M3 7l9 6 9-6"></path>
+                        </svg>
+                    </span>
+
+                    <div class="contact-row-value">
+                        <div class="contact-row-label">Email</div>
+                        <div class="contact-email-line">
+                            <span class="contact-row-tag">Personal</span>
+                            <a href="mailto:udaynath1426@gmail.com">udaynath1426@gmail.com</a>
+                        </div>
+                        <div class="contact-email-line">
+                            <span class="contact-row-tag">Academic</span>
+                            <a href="mailto:p20240026@goa.bits-pilani.ac.in">p20240026@goa.bits-pilani.ac.in</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="contact-row">
+
+                    <span class="contact-row-icon">
+                        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"></path>
+                        </svg>
+                    </span>
+
+                    <div class="contact-row-value">
+                        <div class="contact-row-label">Phone</div>
+                        <span>+91 7672003890</span>
+                    </div>
+
+                </div>
+
+                <div class="contact-divider"></div>
+
+                <div class="find-me-label">Find me on</div>
+
+                <div class="contact-socials">
+
+                    <a href="mailto:udaynath1426@gmail.com" aria-label="Email">
+                        <span>✉</span>
+                    </a>
+
+                    <a href="https://github.com/" target="_blank" aria-label="GitHub">
+                        <span>◉</span>
+                    </a>
+
+                    <a href="https://linkedin.com/in/uday-nath-813862205" target="_blank" aria-label="LinkedIn">
+                        <span>in</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <span>Gunda Uday Nath</span>
+
+        <span>PhD Researcher · BITS Pilani</span>
+
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

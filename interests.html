@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        (function () {
+            try {
+                var stored = localStorage.getItem("theme");
+                var prefersDark = window.matchMedia &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches;
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    stored || (prefersDark ? "dark" : "light")
+                );
+            } catch (e) {}
+        })();
+    </script>
+
+    <title>Interests · Gunda Uday Nath</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="subpage">
+
+    <header class="header" id="header">
+
+        <a href="index.html" class="header-name">
+            <span class="avatar avatar-sm">
+                <img src="images/profile/uday_main.png"
+                     alt="Gunda Uday Nath"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <span class="avatar-fallback">UN</span>
+            </span>
+            Gunda Uday Nath
+        </a>
+
+        <nav class="subpage-nav">
+            <a href="projects.html" class="nav-pill">Projects</a>
+            <a href="publications.html" class="nav-pill">Publications</a>
+            <a href="patents.html" class="nav-pill">Patents</a>
+            <a href="interests.html" class="nav-pill active">Interests</a>
+            <a href="contact.html" class="nav-pill">Contact me</a>
+        </nav>
+
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+            <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4.5"></circle>
+                <path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"></path>
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path>
+            </svg>
+        </button>
+
+    </header>
+
+
+    <main class="page">
+
+        <h1 class="page-title">
+            Interests
+        </h1>
+
+        <p class="page-subtitle">
+            Areas I work in through research, plus a hands-on
+            problem I keep coming back to outside of it.
+        </p>
+
+
+        <!-- FEATURED: PCB REVERSE ENGINEERING -->
+
+        <div class="feature-card">
+
+            <div class="icon-badge">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="7" y="7" width="10" height="10" rx="1.2"></rect>
+                    <path d="M12 2v3M12 19v3M2 12h3M19 12h3M5.5 5.5l1.8 1.8M16.7 16.7l1.8 1.8M18.5 5.5l-1.8 1.8M7.3 16.7l-1.8 1.8"></path>
+                </svg>
+            </div>
+
+            <div class="feature-card-title">PCB Design &amp; Reverse Engineering</div>
+
+            <p class="feature-card-text">
+                I design two-layer PCBs and also reverse engineer existing
+                ones — tracing copper layers and vias back into a working
+                schematic, identifying unmarked or hard-to-source
+                components, and reconstructing the original design intent
+                when no documentation is available. It's a problem I enjoy
+                precisely because it starts from a finished board rather
+                than a blank sheet: the constraints are already there, and
+                the job is to read them correctly.
+            </p>
+
+        </div>
+
+
+        <!-- OTHER INTERESTS -->
+
+        <div class="interest-tags">
+
+            <span class="interest-tag">Vibrotactile Interfaces</span>
+            <span class="interest-tag">Assistive Technology</span>
+            <span class="interest-tag">Accessible Computing</span>
+            <span class="interest-tag">Non-Visual Information Representation</span>
+            <span class="interest-tag">Accessible Educational Technology</span>
+            <span class="interest-tag">Data Visualization for the Visually Impaired</span>
+            <span class="interest-tag">Embedded Systems</span>
+            <span class="interest-tag">Hardware Design</span>
+            <span class="interest-tag">Internet of Things (IoT)</span>
+            <span class="interest-tag">Human-Computer Interaction</span>
+            <span class="interest-tag">AI / LLM-Assisted Accessibility</span>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <span>Gunda Uday Nath</span>
+
+        <span>PhD Researcher · BITS Pilani</span>
+
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

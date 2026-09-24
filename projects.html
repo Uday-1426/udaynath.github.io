@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        (function () {
+            try {
+                var stored = localStorage.getItem("theme");
+                var prefersDark = window.matchMedia &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches;
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    stored || (prefersDark ? "dark" : "light")
+                );
+            } catch (e) {}
+        })();
+    </script>
+
+    <title>Projects · Gunda Uday Nath</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="subpage">
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="header" id="header">
+
+        <a href="index.html" class="header-name">
+            <span class="avatar avatar-sm">
+                <img src="images/profile/uday_main.png"
+                     alt="Gunda Uday Nath"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <span class="avatar-fallback">UN</span>
+            </span>
+            Gunda Uday Nath
+        </a>
+
+        <nav class="subpage-nav">
+            <a href="projects.html" class="nav-pill active">Projects</a>
+            <a href="publications.html" class="nav-pill">Publications</a>
+            <a href="patents.html" class="nav-pill">Patents</a>
+            <a href="interests.html" class="nav-pill">Interests</a>
+            <a href="contact.html" class="nav-pill">Contact me</a>
+        </nav>
+
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+            <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4.5"></circle>
+                <path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"></path>
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path>
+            </svg>
+        </button>
+
+    </header>
+
+
+    <!-- =========================================
+         PAGE CONTENT
+    ========================================== -->
+
+    <main class="page">
+
+        <h1 class="page-title text-center">
+            Projects
+        </h1>
+
+
+        <!-- TABS -->
+
+        <div class="project-tabs">
+
+            <button class="project-tab active" type="button" data-target="panel-ongoing">
+                Ongoing
+            </button>
+
+            <button class="project-tab" type="button" data-target="panel-past">
+                Past Projects
+            </button>
+
+        </div>
+
+
+        <!-- ONGOING -->
+
+        <div class="project-grid" id="panel-ongoing">
+
+            <a href="#" class="project-card">
+
+                <div class="project-image">
+                    <img src="images/projects/vibrotactile-interface.png"
+                         alt="Vibrotactile Interface"
+                         onerror="this.style.display='none'; this.parentElement.classList.add('no-image');">
+                    <span class="no-image-label">Image coming soon</span>
+                </div>
+
+                <div class="project-card-body">
+                    <div class="project-card-title">Vibrotactile Interface</div>
+                    <div class="project-card-desc">For Visually Impaired — A New Technology to Explore</div>
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- PAST -->
+
+        <div class="project-grid" id="panel-past" hidden>
+
+            <a href="#" class="project-card">
+
+                <div class="project-image">
+                    <img src="images/projects/notional-machines.png"
+                         alt="Interactive Tangible Notional Machines"
+                         onerror="this.style.display='none'; this.parentElement.classList.add('no-image');">
+                    <span class="no-image-label">Image coming soon</span>
+                </div>
+
+                <div class="project-card-body">
+                    <div class="project-card-title">Interactive Tangible Notional Machines</div>
+                    <div class="project-card-desc">Teaching computational thinking through physical interaction</div>
+                </div>
+
+            </a>
+
+            <a href="#" class="project-card">
+
+                <div class="project-image">
+                    <img src="images/projects/three-phase-energy-meter.png"
+                         alt="Three Phase Energy Meter"
+                         onerror="this.style.display='none'; this.parentElement.classList.add('no-image');">
+                    <span class="no-image-label">Image coming soon</span>
+                </div>
+
+                <div class="project-card-body">
+                    <div class="project-card-title">Three Phase Energy Meter</div>
+                    <div class="project-card-desc">Low-cost IoT based energy meter</div>
+                </div>
+
+            </a>
+
+            <a href="#" class="project-card">
+
+                <div class="project-image">
+                    <img src="images/projects/single-phase-energy-meter.png"
+                         alt="Single Phase Energy Meter"
+                         onerror="this.style.display='none'; this.parentElement.classList.add('no-image');">
+                    <span class="no-image-label">Image coming soon</span>
+                </div>
+
+                <div class="project-card-body">
+                    <div class="project-card-title">Single Phase Energy Meter</div>
+                    <div class="project-card-desc">IoT-based smart energy meter</div>
+                </div>
+
+            </a>
+
+            <a href="#" class="project-card">
+
+                <div class="project-image">
+                    <img src="images/projects/pos-device.png"
+                         alt="POS Device"
+                         onerror="this.style.display='none'; this.parentElement.classList.add('no-image');">
+                    <span class="no-image-label">Image coming soon</span>
+                </div>
+
+                <div class="project-card-body">
+                    <div class="project-card-title">POS Device</div>
+                    <div class="project-card-desc">Authentication system</div>
+                </div>
+
+            </a>
+
+            <a href="#" class="project-card">
+
+                <div class="project-image">
+                    <img src="images/projects/temperature-monitoring.png"
+                         alt="Temperature Monitoring"
+                         onerror="this.style.display='none'; this.parentElement.classList.add('no-image');">
+                    <span class="no-image-label">Image coming soon</span>
+                </div>
+
+                <div class="project-card-body">
+                    <div class="project-card-title">Temperature Monitoring</div>
+                    <div class="project-card-desc">Real-time temperature monitoring and alerts</div>
+                </div>
+
+            </a>
+
+            <a href="#" class="project-card">
+
+                <div class="project-image">
+                    <img src="images/projects/smart-waste-management.png"
+                         alt="Smart Waste Management"
+                         onerror="this.style.display='none'; this.parentElement.classList.add('no-image');">
+                    <span class="no-image-label">Image coming soon</span>
+                </div>
+
+                <div class="project-card-body">
+                    <div class="project-card-title">Smart Waste Management</div>
+                    <div class="project-card-desc">Real-time monitoring and triggering system to check the waste fillage in the dustbins</div>
+                </div>
+
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+        <span>Gunda Uday Nath</span>
+
+        <span>PhD Researcher · BITS Pilani</span>
+
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
