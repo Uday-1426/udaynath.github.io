@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        (function () {
+            try {
+                var stored = localStorage.getItem("theme");
+                var prefersDark = window.matchMedia &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches;
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    stored || (prefersDark ? "dark" : "light")
+                );
+            } catch (e) {}
+        })();
+    </script>
+
+    <title>Iteration 01 · Vibrotactile Interface · Gunda Uday Nath</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+
+    <header class="header" id="header">
+
+        <a href="../../index.html" class="header-name">
+            <span class="avatar avatar-sm">
+                <img src="../../images/profile/uday_main.png"
+                     alt="Gunda Uday Nath"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <span class="avatar-fallback">UN</span>
+            </span>
+            Gunda Uday Nath
+        </a>
+
+        <nav class="subpage-nav">
+            <a href="../../index.html#projects" class="nav-pill active">Projects</a>
+            <a href="../../index.html#publications" class="nav-pill">Publications</a>
+            <a href="../../index.html#patents" class="nav-pill">Patents</a>
+            <a href="../../index.html#interests" class="nav-pill">Interests</a>
+            <a href="../../index.html#contact" class="nav-pill">Contact me</a>
+        </nav>
+
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+            <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4.5"></circle>
+                <path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"></path>
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path>
+            </svg>
+        </button>
+
+    </header>
+
+
+    <main class="page">
+
+        <a href="../vibrotactile-interface.html" class="detail-back">← Vibrotactile Interface</a>
+
+        <div class="detail-status">Iteration 01</div>
+
+        <h1 class="page-title">Early Prototype &amp; Bench Testing</h1>
+
+        <p class="page-subtitle">
+            Understanding vibration behaviour on a smaller motor array
+            before scaling up to the full device.
+        </p>
+
+        <div class="stat-row">
+
+            <div class="stat-box">
+                <span>
+                    <span class="stat-box-value">Smaller Array</span><br>
+                    <span class="stat-box-label">Motor Layout</span>
+                </span>
+            </div>
+
+            <div class="stat-box">
+                <span>
+                    <span class="stat-box-value">Driver Electronics</span><br>
+                    <span class="stat-box-label">Focus Area</span>
+                </span>
+            </div>
+
+            <div class="stat-box">
+                <span>
+                    <span class="stat-box-value">Bench Testing</span><br>
+                    <span class="stat-box-label">Stage</span>
+                </span>
+            </div>
+
+        </div>
+
+        <!--
+            Placeholder for a photo of the Iteration 1 prototype,
+            once available:
+            <div class="detail-image" style="margin:24px 0;">
+                <img src="../../images/projects/vibrotactile-iteration-1.png"
+                     alt="Iteration 1 prototype">
+            </div>
+        -->
+        <div class="video-placeholder" style="margin:24px 0; aspect-ratio:16/7;">
+            <div class="video-placeholder-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <path d="M21 15l-5-5L5 21"></path>
+                </svg>
+            </div>
+            <span>Iteration 1 prototype photo coming soon</span>
+        </div>
+
+        <div class="detail-body">
+
+            <h2>What We Developed</h2>
+            <p>
+                Before committing to the full 10×10 surface, the project
+                started with a smaller motor array driven by an ESP32.
+                The goal was to work out the driver electronics needed to
+                control many motors reliably, and to get a feel for how
+                vibration from one motor is perceived relative to its
+                neighbours on a grid.
+            </p>
+
+            <h2>What We Tested</h2>
+            <p>
+                Bench testing focused on the hardware layer: driving
+                individual motors cleanly, avoiding cross-talk between
+                nearby motors, and confirming the control electronics
+                could scale to a larger array without redesigning the
+                approach.
+            </p>
+
+            <h2>Learnings &amp; Next Steps</h2>
+            <ul>
+                <li>The driver electronics developed here scaled directly to the full 10×10 array.</li>
+                <li>Vibration from neighbouring motors is distinguishable enough to support spatial patterns, motivating the move to pattern recognition testing.</li>
+                <li>These learnings fed into designing the Flutter control app used in Iteration 02.</li>
+            </ul>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <span>Gunda Uday Nath</span>
+
+        <span>PhD Researcher · BITS Pilani</span>
+
+    </footer>
+
+    <script src="../../js/script.js"></script>
+
+</body>
+
+</html>

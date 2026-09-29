@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function () {
+            try {
+                var stored = localStorage.getItem("theme");
+                var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+                document.documentElement.setAttribute("data-theme", stored || (prefersDark ? "dark" : "light"));
+            } catch (e) {}
+        })();
+    </script>
+    <title>Vibrotactile Interface · Gunda Uday Nath</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;500;600;700;800&family=Playpen+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/story.css">
+</head>
+<body>
+
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="header" id="header">
+        <a href="../index.html" class="header-name">
+            <span class="avatar avatar-sm">
+                <img src="../images/profile/uday_main.png" alt=""
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <span class="avatar-fallback" aria-hidden="true">UN</span>
+            </span>
+            Gunda Uday Nath
+        </a>
+        <nav class="subpage-nav" aria-label="Main">
+            <a href="../index.html#projects" class="nav-pill active" aria-current="page">Projects</a>
+            <a href="../index.html#publications" class="nav-pill">Publications</a>
+            <a href="../index.html#patents" class="nav-pill">Patents</a>
+            <a href="../index.html#interests" class="nav-pill">Interests</a>
+            <a href="../index.html#contact" class="nav-pill">Contact me</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Dark mode" aria-pressed="false">
+            <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"></circle><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"></path></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path></svg>
+        </button>
+    </header>
+
+    <main class="story" id="main">
+
+        <a href="../index.html#projects" class="story-crumb"><span aria-hidden="true">←</span> Back to projects</a>
+
+        <section class="story-hero" aria-labelledby="page-title">
+            <div>
+                <p class="story-kicker"><span class="pulse" aria-hidden="true"></span> Ongoing research · BITS Pilani Goa</p>
+                <h1 id="page-title">Vibrotactile Interface</h1>
+                <p class="story-lede">A low-cost interface made of vibration motors. It lets blind and low-vision people feel patterns with their fingers through haptic feedback.</p>
+                <ul class="story-tags" aria-label="Technologies"><li>Accessibility</li><li>HCI</li><li>Haptics</li><li>Embedded Systems</li><li>User Studies</li></ul>
+                <ul class="hero-stats" aria-label="Key facts"><li><b>10 × 10</b>Motor array</li><li><b>100</b>Vibration motors</li><li><b>ESP32</b>Controller</li><li><b>~$100</b>Total cost</li></ul>
+            </div>
+            <figure class="story-hero-media"><img src="../images/projects/Iteration_2.jpeg" alt="The 10 by 10 vibrotactile surface: one hundred white 3D-printed pixels on a green circuit board"></figure>
+        </section>
+
+        <div class="cards-2 section-gap">
+            <section class="card" aria-labelledby="h-overview">
+                <h2 id="h-overview">01. Overview</h2>
+                <p>In classrooms, a lot of learning happens through visualizations such as graphs and geometric shapes. For a visually impaired student, all of this has to be turned into something they can touch, and usually a teacher makes it by hand.</p>
+                <p>We are building a surface where every small casing(<strong>pixel</strong>) will have a vibration motor. Turn on the right motors and a shape comes up under your fingers. It can be changed any time.</p>
+            </section>
+            <section class="card" aria-labelledby="h-problem">
+                <h2 id="h-problem">02. The problem</h2>
+                <p>Embossed diagrams cannot be changed once they are printed. Refreshable tactile displays can change, but they are very costly and rarely available in our schools. Screen readers are good for text, but they cannot tell you where a line goes or how two shapes sit together.</p>
+                <p>So our question is simple: <strong>can we make visual information accessible to visually impaired people through haptic feedback, conveying it through touch in an affordable way?</strong></p>
+            </section>
+        </div>
+
+        <section class="card section-gap" aria-labelledby="h-how">
+            <h2 id="h-how">03. How it works</h2>
+            <p>You choose a shape on a laptop, or simply ask for it by voice. The controller receives it, switches on the right motors, and the shape comes up under your fingers.</p>
+            <ol class="hiw" aria-label="How a shape reaches your fingers">
+                <li class="step">
+                    <div class="inputs">
+                        <div class="input-card">
+                            <svg width="84" height="56" viewBox="0 0 120 80" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"><rect x="18" y="6" width="84" height="56" rx="5" fill="var(--surface)"/><path d="M18 16h84" /><circle cx="25" cy="11" r="1.4" fill="currentColor"/><circle cx="31" cy="11" r="1.4" fill="currentColor"/><g stroke="none"><rect x="44" y="22" width="7" height="7" rx="1.2" class="acc" fill="currentColor"/><rect x="53" y="22" width="7" height="7" rx="1.2" class="acc" fill="currentColor"/><rect x="62" y="22" width="7" height="7" rx="1.2" class="acc" fill="currentColor"/><rect x="71" y="22" width="7" height="7" rx="1.2" class="acc" fill="currentColor"/><rect x="44" y="31" width="7" height="7" rx="1.2" class="acc" fill="currentColor"/><rect x="53" y="31" width="7" height="7" rx="1.2" fill="currentColor" opacity=".15"/><rect x="62" y="31" width="7" height="7" rx="1.2" fill="currentColor" opacity=".15"/><rect x="71" y="31" width="7" height="7" rx="1.2" class="acc" fill="currentColor"/><rect x="44" y="40" width="7" height="7" rx="1.2" class="acc" fill="currentColor"/><rect x="53" y="40" width="7" height="7" rx="1.2" fill="currentColor" opacity=".15"/><rect x="62" y="40" width="7" height="7" rx="1.2" fill="currentColor" opacity=".15"/><rect x="71" y="40" width="7" height="7" rx="1.2" class="acc" fill="currentColor"/><rect x="44" y="49" width="7" height="7" rx="1.2" class="acc" fill="currentColor"/><rect x="53" y="49" width="7" height="7" rx="1.2" class="acc" fill="currentColor"/><rect x="62" y="49" width="7" height="7" rx="1.2" class="acc" fill="currentColor"/><rect x="71" y="49" width="7" height="7" rx="1.2" class="acc" fill="currentColor"/></g><path d="M6 66h108l-7 9H13z" fill="var(--surface)"/></svg>
+                            <div><b>Laptop app</b>Pick or draw a shape and send it.</div>
+                        </div>
+                        <span class="or" aria-hidden="true">or</span>
+                        <div class="input-card">
+                            <svg width="84" height="56" viewBox="0 0 120 80" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="40" y="10" width="22" height="38" rx="11" fill="var(--surface)"/><path d="M32 38a19 19 0 0 0 38 0M51 57v11M41 68h20"/><g class="acc"><path d="M80 26v16M88 20v28M96 28v12M104 23v22"/></g></svg>
+                            <div><span class="bubble">“Show me a square”</span><b>Voice assistant (LLM)</b>Just ask, like talking to Alexa. The LLM understands and picks the shape.</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="arrow" aria-hidden="true">→</li>
+                <li class="step">
+                    <svg width="96" height="72" viewBox="0 0 120 90" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><g class="acc"><path d="M46 14a20 20 0 0 1 28 0M52 20a11 11 0 0 1 16 0"/><circle cx="60" cy="25" r="1.6" fill="currentColor"/></g><rect x="14" y="34" width="92" height="48" rx="6" fill="var(--surface)"/><rect x="44" y="45" width="32" height="26" rx="3"/><path d="M50 45v-5M58 45v-5M66 45v-5M70 45v-5M50 76v-5M58 76v-5M66 76v-5M70 76v-5M22 44h10M22 52h10M22 60h10M88 44h10M88 52h10M88 60h10"/></svg>
+                    <div><b>Controller</b>The ESP32 gets the shape over Wi-Fi and finds which motors to switch on.</div>
+                </li>
+                <li class="arrow" aria-hidden="true">→</li>
+                <li class="step">
+                    <div class="hiw-grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                    <div><b>Surface vibrates</b>Only the motors that make up the shape start buzzing.</div>
+                </li>
+                <li class="arrow" aria-hidden="true">→</li>
+                <li class="step">
+                    <svg width="80" height="72" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-4 0v5M14 10V4a2 2 0 0 0-4 0v6M10 10.5V6a2 2 0 0 0-4 0v8" fill="var(--surface)"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.9-6-2.4l-3.6-3.6a2 2 0 0 1 2.8-2.8L7 15" fill="var(--surface)"/><g class="acc"><path d="M1.5 5.5c1-1 1-2 0-3M4 6.5c1.6-1.6 1.6-3.4 0-5"/></g></svg>
+                    <div><b>Fingers feel it</b>The person slides their fingers across and feels the square.</div>
+                </li>
+            </ol>
+        </section>
+
+        <a class="play-cta" href="vibrotactile-interface/virtual-model.html">
+            <p class="sticky-note">Tiny pixels, tiny buzz!<br>Phone users, say hello! <span class="note-emoji" aria-hidden="true">📳</span></p>
+            <div>
+                <h2>Feel it yourself</h2>
+                <p>Try our virtual 10 × 10 surface. Explore the shapes from our study, or draw your own.</p>
+            </div>
+            <span class="go">Play &amp; explore <span aria-hidden="true">→</span></span>
+        </a>
+
+
+        <!-- ============ ITERATION 1 ============ -->
+        <section class="iter i1" id="iteration-1" aria-labelledby="h-it1">
+            <div class="iter-head">
+                <div>
+                    <p class="iter-eyebrow">Iteration 01 · 5 × 3 surface</p>
+                    <h2 id="h-it1">Can people read shapes from vibration at all?</h2>
+                </div>
+                <ul class="iter-metrics" aria-label="Iteration 1 at a glance">
+                    <li><b>5 × 3</b>Array</li><li><b>15</b>Motors</li><li><b>10</b>Participants</li>
+                </ul>
+            </div>
+            <div class="iter-body">
+                <div>
+                    <p>We started with 15 coin vibration motors, each placed in a silicone mould with a uniform base layer. We used the surface to represent <strong>digits and Braille characters</strong> and tested whether people could identify these patterns through touch..</p>
+                    <p>Nine sighted participants and one blind participant took part in the study. Their responses provided initial evidence that people can perceive and distinguish spatial patterns through vibration, giving us a basis to explore more complex shapes and representations</p>
+                    <button type="button" class="more-btn" aria-expanded="true" aria-controls="more-it1"><span class="label">Know more</span><span class="chev" aria-hidden="true">▾</span></button>
+                </div>
+                <figure class="figure">
+                    <div class="figure-frame"><img src="../images/projects/Iteration_1.png" alt="The 5 by 3 prototype: an ESP32 and transistor circuit on a green perfboard, wired to fifteen coin motors in silicone capsules"></div>
+                    <figcaption>The first prototype: 15 coin motors on the right, the control circuit on the left.</figcaption>
+                </figure>
+            </div>
+            <div class="more" id="more-it1" tabindex="-1">
+                <h3>What we built</h3>
+                <p>Each coin motor (an ERM motor, which vibrates by spinning a small off-centre weight) was placed inside a cast silicone (PDMS) capsule. An ESP32 switched the motors on and off through transistors.</p>
+                <h3>What we learnt</h3>
+                <p>We fixed an accelerometer on each pixel and measured how the vibration spreads. Using the surface also showed us four clear problems. Each one changed the next design.</p>
+                <ul class="lessons">
+                    <li><div><b>Too big and too costly</b>Coin motors needed a lot of space, and silicone casting was expensive.</div><span class="arrow" aria-hidden="true">→</span><div><b>Next time:</b> smaller cylindrical motors in cheap 3D-printed plastic.</div></li>
+                    <li><div><b>The hand stopped the vibration</b>When the palm rested on the surface, the vibration died down.</div><span class="arrow" aria-hidden="true">→</span><div><b>Next time:</b> a cap that takes the finger’s pressure away from the motor.</div></li>
+                    <li><div><b>Vibration leaked to neighbours</b>All motors sat in one silicone block, so one motor shook the others too.</div><span class="arrow" aria-hidden="true">→</span><div><b>Next time:</b> every pixel as its own separate unit.</div></li>
+                    <li><div><b>Very hard to repair</b>Changing a dead motor needed de-soldering, which a blind user cannot do alone.</div><span class="arrow" aria-hidden="true">→</span><div><b>Next time:</b> motors that plug in and come out by hand.</div></li>
+                </ul>
+                <h3>How the casing changed</h3>
+                <p>We tried a few casing designs, from one solid block to separate pieces with removable caps. Each version taught us something about holding the motors firmly and keeping vibration from leaking.</p>
+                <figure class="figure"><div class="figure-frame pad"><img src="../images/projects/Work%20Flow-1.png" alt="Four 3D drawings showing the casing changing from one solid block, to separate units, to separate pixels with removable caps"></div><figcaption>How the casing changed, from one block to separate pieces with caps.</figcaption></figure>
+                <h3>Measuring the spread</h3>
+                <div class="figure-row">
+                    <figure class="figure"><div class="figure-frame pad"><img src="../images/projects/PSF_5x3.png" alt="Grid of vibration readings in metres per second squared around nine motor positions on the 5 by 3 surface. Neighbouring cells also show high values."></div><figcaption>Vibration readings (RMS, m/s²) around each motor. The neighbours also vibrate strongly.</figcaption></figure>
+                    <figure class="figure"><div class="figure-frame pad"><img src="../images/projects/PSF_1.png" alt="Heatmap of vibration across a 3 by 3 area. High vibration covers most of the area, not just one cell."></div><figcaption>The same spread as a heatmap. One motor’s vibration reaches the whole area.</figcaption></figure>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============ ITERATION 2 ============ -->
+        <section class="iter i2" id="iteration-2" aria-labelledby="h-it2">
+            <div class="iter-head">
+                <div>
+                    <p class="iter-eyebrow">Iteration 02 · 10 × 10 surface</p>
+                    <h2 id="h-it2">Which shapes can people feel, and how do they read them?</h2>
+                </div>
+                <ul class="iter-metrics" aria-label="Iteration 2 at a glance">
+                    <li><b>10 × 10</b>Array</li><li><b>100</b>Motors</li><li><b>9</b>Participants</li>
+                </ul>
+            </div>
+            <div class="iter-body">
+                <div>
+                    <p>With 100 smaller motors we could show proper shapes: lines, a square, the letter H and more. We tested it with <strong>four blind and five sighted people</strong>.</p>
+                    <p>Blind and blindfolded sighted people got about the same number right. But blind readers were <strong>about three times faster</strong>, because they move their fingers smoothly across the surface, like reading Braille.</p>
+                    <button type="button" class="more-btn" aria-expanded="true" aria-controls="more-it2"><span class="label">Know more</span><span class="chev" aria-hidden="true">▾</span></button>
+                </div>
+                <figure class="figure">
+                    <div class="figure-frame pad"><img src="../images/projects/Shapes.png" alt="The nine shapes used in the study, drawn on 10 by 10 grids: T, inverted T, H, horizontal parallel lines, square, pattern X, diagonal parallel lines, pattern Y and plus"></div>
+                    <figcaption>The nine shapes used in our study.</figcaption>
+                </figure>
+            </div>
+            <div class="more" id="more-it2" tabindex="-1">
+                <h3>A pixel that keeps working when you press it</h3>
+                <p>Small cylindrical motors stop vibrating even under light finger pressure. So each pixel has two parts: a base that holds the motor, and a <strong>cap on top</strong> with a <strong>3 mm gap</strong> above the motor. Your finger presses the cap, not the motor, and the vibration still reaches your fingertip.</p>
+                <ul class="facts" aria-label="Iteration 2 numbers"><li><b>100</b>separate pixels</li><li><b>~$100</b>total cost</li><li><b>11×11×16</b>mm per pixel</li><li><b>3 mm</b>gap above the motor</li></ul>
+                <h3>The electronics</h3>
+                <p>There are <strong>two circuit boards stacked together</strong>. The top one holds the 100 motors. The bottom one has the <strong>ESP32</strong>, <strong>13 shift registers</strong> (74HC595) and one MOSFET switch for each motor. Each motor plugs into a connector, so it can be taken out without soldering.</p>
+                <h3>How we ran the study</h3>
+                <p>We worked with <strong>four blind Braille readers</strong> and <strong>five sighted people</strong>. Sighted people did the test twice, first blindfolded and then with open eyes. There were two practice shapes and seven test shapes. For each shape, people explored the surface and pointed to the matching shape on a 3D-printed reference sheet. Every trial was video-recorded, and two of us analysed 98 trials.</p>
+                <h3>What we found</h3>
+                <div class="versus">
+                    <div><h4>Blind readers</h4><div class="big">40 s <small>median time</small></div><p>Smooth, steady finger movement. They paused for only about 4% of the time.</p></div>
+                    <div><h4>Blindfolded sighted readers</h4><div class="big">135 s <small>median time</small></div><p>Stop-and-start searching, paused about 10% of the time. Some pressed pixels with eight fingers, like typing on a keyboard.</p></div>
+                </div>
+                <figure class="figure" style="max-width:520px;margin-top:14px">
+                    <div class="figure-frame pad"><img src="../images/projects/Result_Iteration_2.png" alt="Box plot of the fraction of time spent paused. Blind readers paused far less than blindfolded sighted readers; p less than 0.0001."></div>
+                    <figcaption>How much of each trial people spent paused, measured from the videos.</figcaption>
+                </figure>
+                <p style="margin-top:14px">Some shapes were easy and some were not. Horizontal lines were almost always right. The <strong>diagonal was confused even by people who could see it</strong>, which tells us the problem is how the shape is drawn on the grid, not the sense of touch.</p>
+                <ul class="bars" aria-label="Correct answers by touch alone, for each shape">
+                    <li class="bar"><span>Horizontal lines</span><span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:89%"></span></span><b>89%</b></li>
+                    <li class="bar"><span>Pattern Y</span><span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:78%"></span></span><b>78%</b></li>
+                    <li class="bar"><span>Square</span><span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:67%"></span></span><b>67%</b></li>
+                    <li class="bar"><span>H</span><span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:56%"></span></span><b>56%</b></li>
+                    <li class="bar"><span>Pattern X</span><span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:56%"></span></span><b>56%</b></li>
+                    <li class="bar"><span>Diagonal lines</span><span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:56%"></span></span><b>56%</b></li>
+                    <li class="bar"><span>Plus</span><span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:44%"></span></span><b>44%</b></li>
+                </ul>
+                <p style="margin-top:14px">With open eyes, sighted people became twice as fast (135 s down to 65 s), but their accuracy went up only a little (66% to 80%).</p>
+                <h3>What we learnt</h3>
+                <p>How a shape is drawn on the grid matters more than adding more motors. The surface must let fingers glide easily, and every pixel must work reliably. In the study, some motors became weak because their contact depended on how firmly they sat in the casing. That is exactly what we are working on now.</p>
+            </div>
+        </section>
+
+
+        <!-- ============ ITERATION 3 ============ -->
+        <section class="iter i3" id="iteration-3" aria-labelledby="h-it3">
+            <div class="iter-head">
+                <div>
+                    <p class="iter-eyebrow">Iteration 03 · Ongoing work</p>
+                    <h2 id="h-it3">Can people repair it themselves?</h2>
+                </div>
+                <ul class="iter-metrics" aria-label="Iteration 3 at a glance">
+                    <li><b>Repairability</b>Focus</li><li><b>Testing</b>Current step</li><li><b>Ongoing</b>Status</li>
+                </ul>
+            </div>
+            <div class="iter-body solo">
+                <div>
+                    <p class="status">In progress</p>
+                    <p>With 100 motors, sooner or later one will stop working. We don’t want the device to go back to a lab every time that happens.</p>
+                    <p>So we are designing each pixel so that anyone, <strong>even without sight</strong>, can open it, take out the old motor and put in a new one, <strong>with no tools and no soldering</strong>. Now we are testing whether people can really do it.</p>
+                    <button type="button" class="more-btn" aria-expanded="true" aria-controls="more-it3"><span class="label">Know more</span><span class="chev" aria-hidden="true">▾</span></button>
+                </div>
+            </div>
+            <div class="more" id="more-it3" tabindex="-1">
+                <h3>Changing a motor in six steps</h3>
+                <ol class="steps" aria-label="Steps to replace a motor">
+                    <li><b>Open</b>Lift the cap with a finger</li>
+                    <li><b>Remove</b>Pull out the old motor</li>
+                    <li><b>Turn</b>Match the motor’s flat side to a raised ridge</li>
+                    <li><b>Insert</b>Push the new motor in</li>
+                    <li><b>Close</b>Snap the cap back</li>
+                    <li><b>Test</b>Switch the pixel on to check it</li>
+                </ol>
+                <h3>What we are testing</h3>
+                <p>Blind and sighted people, some who know the device and some who are new to it, replace motors at the <strong>corners, edges and middle</strong> of the grid. We note whether it works, how long it takes, what mistakes happen (like putting the motor in the wrong way), and how easy it felt.</p>
+                <p>We are also testing the hardware: whether a replaced pixel works as well as the original, whether the new casing keeps a good electrical contact, and how much vibration still reaches the neighbouring pixels.</p>
+                <h3>Why it matters</h3>
+                <p>Assistive devices are often put aside when they break and nobody nearby can fix them. A device that its own user can repair lasts longer, costs less to keep, and keeps working even where no technician is available.</p>
+            </div>
+        </section>
+
+
+        <section class="card section-gap" aria-labelledby="h-people">
+            <h2 id="h-people">Who we work with</h2>
+            <p>We do our user studies with these organisations and learn from them. Their members try each prototype, and their feedback decides what we build next.</p>
+            <ul class="people">
+                <li>RDT Anantapur<span>Anantapur, Andhra Pradesh</span></li>
+                <li>NAB Goa<span>Goa</span></li>
+                <li>Devnar Foundation<span>Hyderabad, Telangana</span></li>
+            </ul>
+        </section>
+
+        <div class="cards-2 section-gap">
+            <section class="card" aria-labelledby="h-next">
+                <h2 id="h-next">Current direction</h2>
+                <p>Making every pixel easy to repair, testing it with people, and then moving from simple shapes to richer learning material like charts and diagrams.</p>
+            </section>
+            <section class="card" aria-labelledby="h-pub">
+                <h2 id="h-pub">Related work</h2>
+                <p><strong>An Affordable Vibrotactile Surface for Tactile Figure Recognition: Exploration Strategies of Blind and Sighted Users</strong><br>CHI 2027 (under review)</p>
+            </section>
+        </div>
+
+    </main>
+
+    <footer>
+        <span>Gunda Uday Nath</span>
+        <span>PhD Researcher · BITS Pilani</span>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/story.js"></script>
+</body>
+</html>

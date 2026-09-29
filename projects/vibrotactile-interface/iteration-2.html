@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        (function () {
+            try {
+                var stored = localStorage.getItem("theme");
+                var prefersDark = window.matchMedia &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches;
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    stored || (prefersDark ? "dark" : "light")
+                );
+            } catch (e) {}
+        })();
+    </script>
+
+    <title>Iteration 02 · Vibrotactile Interface · Gunda Uday Nath</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+
+    <header class="header" id="header">
+
+        <a href="../../index.html" class="header-name">
+            <span class="avatar avatar-sm">
+                <img src="../../images/profile/uday_main.png"
+                     alt="Gunda Uday Nath"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <span class="avatar-fallback">UN</span>
+            </span>
+            Gunda Uday Nath
+        </a>
+
+        <nav class="subpage-nav">
+            <a href="../../index.html#projects" class="nav-pill active">Projects</a>
+            <a href="../../index.html#publications" class="nav-pill">Publications</a>
+            <a href="../../index.html#patents" class="nav-pill">Patents</a>
+            <a href="../../index.html#interests" class="nav-pill">Interests</a>
+            <a href="../../index.html#contact" class="nav-pill">Contact me</a>
+        </nav>
+
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+            <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4.5"></circle>
+                <path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"></path>
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path>
+            </svg>
+        </button>
+
+    </header>
+
+
+    <main class="page">
+
+        <a href="../vibrotactile-interface.html" class="detail-back">← Vibrotactile Interface</a>
+
+        <div class="detail-status">Iteration 02</div>
+
+        <h1 class="page-title">10×10 Array &amp; Pattern Recognition Study</h1>
+
+        <p class="page-subtitle">
+            Scaling to the full device and testing whether simple
+            spatial patterns are recognisable through touch alone.
+        </p>
+
+        <div class="stat-row">
+
+            <div class="stat-box">
+                <span class="stat-box-icon">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                        <path d="M9 3v18M15 3v18M3 9h18M3 15h18"></path>
+                    </svg>
+                </span>
+                <span>
+                    <span class="stat-box-value">10 × 10</span><br>
+                    <span class="stat-box-label">Array Size</span>
+                </span>
+            </div>
+
+            <div class="stat-box">
+                <span class="stat-box-icon">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="8"></circle>
+                        <circle cx="12" cy="12" r="2.5" fill="currentColor" stroke="none"></circle>
+                    </svg>
+                </span>
+                <span>
+                    <span class="stat-box-value">100</span><br>
+                    <span class="stat-box-label">Vibration Motors</span>
+                </span>
+            </div>
+
+            <div class="stat-box">
+                <span class="stat-box-icon">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 12h3l2-7 3 14 2-9 2 5 2-3h6"></path>
+                    </svg>
+                </span>
+                <span>
+                    <span class="stat-box-value">Comparable</span><br>
+                    <span class="stat-box-label">Blind / blindfolded recognition</span>
+                </span>
+            </div>
+
+            <div class="stat-box">
+                <span class="stat-box-icon">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9"></circle>
+                        <path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1.3 1-1.3 1.9"></path>
+                        <path d="M12 17h.01"></path>
+                    </svg>
+                </span>
+                <span>
+                    <span class="stat-box-value">$100</span><br>
+                    <span class="stat-box-label">Hardware Cost</span>
+                </span>
+            </div>
+
+        </div>
+
+        <!--
+            Placeholder for a photo of the Iteration 2 (10x10)
+            prototype, once available:
+            <div class="detail-image" style="margin:24px 0;">
+                <img src="../../images/projects/vibrotactile-iteration-2.png"
+                     alt="Iteration 2 prototype">
+            </div>
+        -->
+        <div class="video-placeholder" style="margin:24px 0; aspect-ratio:16/7;">
+            <div class="video-placeholder-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <path d="M21 15l-5-5L5 21"></path>
+                </svg>
+            </div>
+            <span>Iteration 2 prototype photo coming soon</span>
+        </div>
+
+        <div class="detail-body">
+
+            <h2>What Changed</h2>
+            <p>
+                The motor array scaled from the small bench-test layout
+                up to the full 10×10 grid, and a web/mobile control app
+                built in Flutter was added to author patterns, adjust
+                intensity and speed, and record participant responses.
+            </p>
+
+            <h2>Example Patterns</h2>
+
+            <div class="pattern-thumb-row">
+
+                <div class="pattern-thumb">
+                    <div class="pattern-thumb-grid" data-pattern="circle"></div>
+                    <span class="pattern-thumb-label">Circle</span>
+                </div>
+
+                <div class="pattern-thumb">
+                    <div class="pattern-thumb-grid" data-pattern="triangle"></div>
+                    <span class="pattern-thumb-label">Triangle</span>
+                </div>
+
+                <div class="pattern-thumb">
+                    <div class="pattern-thumb-grid" data-pattern="arrow"></div>
+                    <span class="pattern-thumb-label">Arrow</span>
+                </div>
+
+                <div class="pattern-thumb">
+                    <div class="pattern-thumb-grid" data-pattern="heart"></div>
+                    <span class="pattern-thumb-label">Heart</span>
+                </div>
+
+            </div>
+
+            <h2>Key Findings</h2>
+            <ul>
+                <li>Nine participants explored seven figures: four blind participants and five sighted participants, first blindfolded and then with vision available.</li>
+                <li>Blind and blindfolded sighted participants had comparable recognition accuracy; blind participants completed trials about three times faster.</li>
+                <li>Some figures, especially the diagonal, remained difficult to recognize, showing that pattern design and exploration strategy matter alongside resolution.</li>
+            </ul>
+
+            <h2>Learnings &amp; Next Steps</h2>
+            <p>
+                Simple spatial patterns are recognisable non-visually at
+                this array size and cost — the next iteration moves from
+                simple shapes toward richer educational content: letters,
+                numbers, and graphs, compared across sighted and blind
+                participants.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <span>Gunda Uday Nath</span>
+
+        <span>PhD Researcher · BITS Pilani</span>
+
+    </footer>
+
+    <script src="../../js/script.js"></script>
+
+</body>
+
+</html>

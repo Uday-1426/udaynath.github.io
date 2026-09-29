@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function () {
+            try {
+                var stored = localStorage.getItem("theme");
+                var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+                document.documentElement.setAttribute("data-theme", stored || (prefersDark ? "dark" : "light"));
+            } catch (e) {}
+        })();
+    </script>
+    <title>Smart Waste Management · Gunda Uday Nath</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/story.css">
+</head>
+<body>
+
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="header" id="header">
+        <a href="../index.html" class="header-name">
+            <span class="avatar avatar-sm">
+                <img src="../images/profile/uday_main.png" alt=""
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <span class="avatar-fallback" aria-hidden="true">UN</span>
+            </span>
+            Gunda Uday Nath
+        </a>
+        <nav class="subpage-nav" aria-label="Main">
+            <a href="../index.html#projects" class="nav-pill active" aria-current="page">Projects</a>
+            <a href="../index.html#publications" class="nav-pill">Publications</a>
+            <a href="../index.html#patents" class="nav-pill">Patents</a>
+            <a href="../index.html#interests" class="nav-pill">Interests</a>
+            <a href="../index.html#contact" class="nav-pill">Contact me</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Dark mode" aria-pressed="false">
+            <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"></circle><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"></path></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path></svg>
+        </button>
+    </header>
+
+    <main class="story" id="main">
+
+        <a href="../index.html#projects" class="story-crumb"><span aria-hidden="true">←</span> Back to projects</a>
+
+        <section class="story-hero" aria-labelledby="page-title">
+            <div>
+                <p class="story-kicker"><span class="pulse" aria-hidden="true"></span> Past project · IoT</p>
+                <h1 id="page-title">Smart Waste Management</h1>
+                <p class="story-lede">Sensors that tell the collection team when a bin is full, so bins are emptied on time instead of on a fixed schedule.</p>
+                <ul class="story-tags" aria-label="Technologies"><li>ESP32</li><li>Ultrasonic Sensor</li><li>KiCad</li><li>ThingsBoard</li></ul>
+                <ul class="hero-stats" aria-label="Key facts"><li><b>Ultrasonic</b>Fill-level sensing</li><li><b>ESP32</b>Controller</li><li><b>Alerts</b>To the team</li></ul>
+            </div>
+            <figure class="story-hero-media"><img src="../images/projects/smart-waste-management.png" alt="Smart waste bin sensor unit"></figure>
+        </section>
+
+        <div class="cards-2 section-gap">
+            <section class="card" aria-labelledby="h-problem">
+                <h2 id="h-problem">01. The problem</h2>
+                <p>In a factory, different bins fill up at different speeds. With a fixed collection schedule, some bins overflow while others are emptied half-full. The team needs to know the real status before they plan their round.</p>
+            </section>
+            <section class="card" aria-labelledby="h-built">
+                <h2 id="h-built">02. What we built</h2>
+                <p>An <strong>ultrasonic sensor</strong> in each bin measures how full it is. An <strong>ESP32</strong> reads the level, shows it on a <strong>local web server</strong>, and <strong>alerts the factory team</strong> when a bin needs emptying.</p>
+            </section>
+        </div>
+
+        <section class="iter" aria-labelledby="h-points">
+            <div class="iter-head">
+                <div>
+                    <p class="iter-eyebrow">03. Key points</p>
+                    <h2 id="h-points">What it does</h2>
+                </div>
+            </div>
+            <div class="iter-body solo">
+                <div>
+                    <ul class="card-list-plain" style="margin:0 0 14px;padding-left:20px;font-size:16px;line-height:1.8;color:var(--ink-soft)"><li>Real-time monitoring and triggering using ultrasonic sensors.</li><li>Alerts sent to the factory team for on-time disposal.</li><li>Monitoring through a local web server.</li></ul>
+                    <button type="button" class="more-btn" aria-expanded="true" aria-controls="more-waste"><span class="label">Know more</span><span class="chev" aria-hidden="true">▾</span></button>
+                </div>
+            </div>
+            <div class="more" id="more-waste" tabindex="-1">
+                <h3>How it works</h3>
+                <ol class="flow" aria-label="How it works, step by step"><li><b>Bin</b>Waste level</li><li><b>Ultrasonic sensor</b>Measures the distance</li><li><b>ESP32</b>Works out the fill level</li><li><b>Web server</b>Local monitoring</li><li><b>Team</b>Empties it on time</li></ol>
+            </div>
+        </section>
+
+        <nav class="story-end" aria-label="More">
+            <a class="end-card" href="vibrotactile-interface.html"><small>Current research</small><strong>Vibrotactile Interface →</strong><p>Feeling shapes through vibration.</p></a>
+            <a class="end-card" href="../index.html#projects"><small>All work</small><strong>Back to projects →</strong><p>Ongoing and past projects.</p></a>
+        </nav>
+
+    </main>
+
+    <footer>
+        <span>Gunda Uday Nath</span>
+        <span>PhD Researcher · BITS Pilani</span>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/story.js"></script>
+</body>
+</html>

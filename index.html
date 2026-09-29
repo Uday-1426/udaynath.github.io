@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        (function () {
+            try {
+                var stored = localStorage.getItem("theme");
+                var prefersDark = window.matchMedia &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches;
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    stored || (prefersDark ? "dark" : "light")
+                );
+            } catch (e) {}
+        })();
+    </script>
+
+    <title>Gunda Uday Nath</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="header" id="header">
+
+        <a href="#home" class="header-name">
+            <span class="avatar avatar-sm">
+                <img src="images/profile/uday_main.png"
+                     alt=""
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <span class="avatar-fallback" aria-hidden="true">UN</span>
+            </span>
+            Gunda Uday Nath
+        </a>
+
+        <nav class="subpage-nav" aria-label="Main">
+            <a href="#projects" class="nav-pill">Projects</a>
+            <a href="#publications" class="nav-pill">Publications</a>
+            <a href="#patents" class="nav-pill">Patents</a>
+            <a href="#interests" class="nav-pill">Interests</a>
+            <a href="#contact" class="nav-pill">Contact me</a>
+        </nav>
+
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Dark mode" aria-pressed="false">
+            <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="4.5"></circle>
+                <path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"></path>
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path>
+            </svg>
+        </button>
+
+    </header>
+
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <main id="main">
+
+    <section class="hero" id="home">
+
+        <div class="hero-inner">
+
+            <h1>
+                Gunda Uday Nath
+            </h1>
+
+            <p class="bio">
+                I like designing and building things, from electronics to interactive technologies, then learning from how people use them. My path began with practical systems: energy meters, cold-storage monitoring, and a point-of-sale device developed under the supervision of <a href="https://www.bits-pilani.ac.in/goa/kanagachidambaresan-g-r/" target="_blank" rel="noopener">Dr. G. R. Kanagachidambaresan</a>. That work taught me to take a design from circuit to field use, where reliability matters as much as the schematic. Today, under the guidance of <a href="https://www.bits-pilani.ac.in/goa/arun-raman/" target="_blank" rel="noopener">Dr. Arun Raman</a> at BITS Pilani, I explore people-centred interaction and assistive technology. My current work asks how a low-cost surface of vibration motors can make visual information explorable through touch. Each prototype leads to a new question, and each study helps shape what we build next.
+
+            </p>
+
+
+            <!-- EXPLORE BUTTON -->
+
+            <a href="#projects" class="explore-button">
+                <span>Explore my work</span>
+                <span class="button-arrow">↓</span>
+            </a>
+
+            <!-- PHOTO, LINKS + AFFILIATION -->
+
+            <aside class="hero-side">
+
+                <div class="avatar hero-photo">
+                    <img src="images/profile/uday_main.png"
+                         alt="Portrait of Gunda Uday Nath"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <span class="avatar-fallback">UN</span>
+                </div>
+
+                <!-- SOCIAL LINKS -->
+
+                <div class="social-links">
+
+                    <a href="mailto:udaynath1426@gmail.com"
+                       aria-label="Email">
+                        <span aria-hidden="true">✉</span>
+                    </a>
+
+                    <a href="https://github.com/Uday-1426"
+                       target="_blank" rel="noopener"
+                       aria-label="GitHub (opens in a new tab)">
+                        <span aria-hidden="true">◉</span>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/uday-nath-gunda-813862205/"
+                       target="_blank" rel="noopener"
+                       aria-label="LinkedIn (opens in a new tab)">
+                        <span aria-hidden="true">in</span>
+                    </a>
+
+                </div>
+
+                <span class="hero-eyebrow">PhD Candidate · BITS Pilani, K. K. Birla Goa Campus</span>
+
+            </aside>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         PROJECTS
+    ========================================== -->
+
+    <section class="section section-wide" id="projects">
+
+        <h2 class="page-title text-center">
+            Projects
+        </h2>
+
+
+        <!-- TABS -->
+
+        <div class="project-tabs" role="tablist" aria-label="Project groups">
+
+            <button class="project-tab active" type="button" role="tab" id="tab-ongoing" aria-selected="true" aria-controls="panel-ongoing" data-target="panel-ongoing">
+                Ongoing
+            </button>
+
+            <button class="project-tab" type="button" role="tab" id="tab-past" aria-selected="false" aria-controls="panel-past" data-target="panel-past">
+                Past Projects
+            </button>
+
+        </div>
+
+
+        <!-- ONGOING -->
+
+        <div class="project-grid" id="panel-ongoing" role="tabpanel" aria-labelledby="tab-ongoing">
+
+            <a href="projects/vibrotactile-interface.html" class="project-card">
+
+                <div class="project-letter t1" aria-hidden="true">V</div>
+
+                <div class="project-card-body">
+                    <div class="project-card-title">Vibrotactile Interface</div>
+                    <div class="project-card-desc">From a small 5 × 3 prototype to a 10 × 10 tactile surface, each study reshapes how spatial information can be read through touch.</div>
+                </div>
+
+            </a>
+
+        </div>
+
+
+        <!-- PAST -->
+
+        <div class="project-grid" id="panel-past" role="tabpanel" aria-labelledby="tab-past" hidden>
+
+            <a href="projects/notional-machines.html" class="project-card">
+
+                <div class="project-letter t2" aria-hidden="true">N</div>
+
+                <div class="project-card-body">
+                    <div class="project-card-title">Interactive Tangible Notional Machines</div>
+                    <div class="project-card-desc">Making invisible ideas like memory and algorithms tangible, so learners can see a program unfold through physical interaction.</div>
+                </div>
+
+            </a>
+
+            <a href="projects/three-phase-energy-meter.html" class="project-card">
+
+                <div class="project-letter t3" aria-hidden="true">T</div>
+
+                <div class="project-card-body">
+                    <div class="project-card-title">Three Phase Energy Meter</div>
+                    <div class="project-card-desc">A practical need for remote visibility into three-phase power became a compact meter that measures locally and reports to the cloud.</div>
+                </div>
+
+            </a>
+
+            <a href="projects/single-phase-energy-meter.html" class="project-card">
+
+                <div class="project-letter t1" aria-hidden="true">S</div>
+
+                <div class="project-card-body">
+                    <div class="project-card-title">Single Phase Energy Meter</div>
+                    <div class="project-card-desc">Bringing energy readings into view: a connected single-phase meter designed to make household consumption easier to monitor.</div>
+                </div>
+
+            </a>
+
+            <a href="projects/pos-device.html" class="project-card">
+
+                <div class="project-letter t2" aria-hidden="true">P</div>
+
+                <div class="project-card-body">
+                    <div class="project-card-title">POS Device</div>
+                    <div class="project-card-desc">A point-of-sale device shaped by real transaction workflows, with authentication at the centre of a dependable checkout.</div>
+                </div>
+
+            </a>
+
+            <a href="projects/temperature-monitoring.html" class="project-card">
+
+                <div class="project-letter t3" aria-hidden="true">T</div>
+
+                <div class="project-card-body">
+                    <div class="project-card-title">Temperature Monitoring</div>
+                    <div class="project-card-desc">For temperature-sensitive storage, timely readings matter; this system monitors conditions and surfaces changes as they happen.</div>
+                </div>
+
+            </a>
+
+            <a href="projects/smart-waste-management.html" class="project-card">
+
+                <div class="project-letter t1" aria-hidden="true">S</div>
+
+                <div class="project-card-body">
+                    <div class="project-card-title">Smart Waste Management</div>
+                    <div class="project-card-desc">Turning a full bin into an actionable signal, this project connects fill-level sensing with timely monitoring and collection decisions.</div>
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         PUBLICATIONS
+    ========================================== -->
+
+    <section class="section" id="publications">
+
+        <h2 class="page-title">
+            Publications
+        </h2>
+
+        <p class="page-subtitle">
+            Research writing arising from work on smart energy
+            metering and accessible interaction.
+        </p>
+
+        <div class="card-list">
+
+            <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=10724727"
+               target="_blank"
+               rel="noopener"
+               class="list-card"
+               aria-describedby="new-tab-note">
+
+                <div class="list-card-body">
+                    <div class="list-card-title">
+                        IoT Enabled Three Phase Smart Electrical
+                        Consumption Monitoring System Using ADE9000
+                    </div>
+                    <div class="list-card-meta">IEEE Xplore</div>
+                </div>
+
+                <div class="list-card-arrow" aria-hidden="true">→</div>
+
+            </a>
+
+            <a href="https://link.springer.com/chapter/10.1007/978-981-96-9983-4_13"
+               target="_blank"
+               rel="noopener"
+               class="list-card"
+               aria-describedby="new-tab-note">
+
+                <div class="list-card-body">
+                    <div class="list-card-title">
+                        IoT Enabled Three Phase Power Monitoring System Using ADE7758
+                    </div>
+                    <div class="list-card-meta">COMSYS 2024</div>
+                </div>
+
+                <div class="list-card-arrow" aria-hidden="true">→</div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         PATENTS
+    ========================================== -->
+
+    <section class="section" id="patents">
+
+        <h2 class="page-title">
+            Patents
+        </h2>
+
+        <p class="page-subtitle">
+            Patents filed from IoT-based smart metering and
+            monitoring work.
+        </p>
+
+        <div class="card-list">
+
+            <a href="images/projects/Patent.jpeg"
+               target="_blank"
+               rel="noopener"
+               class="list-card"
+               aria-describedby="new-tab-note">
+
+                <div class="list-card-body">
+                    <div class="list-card-title">
+                        Low Cost IoT Based Single Phase Energy Meter
+                        Using ADE7753
+                    </div>
+                    <div class="list-card-meta">Patent ID: 202341080081 · Granted · View Certificate</div>
+                </div>
+
+                <div class="list-card-arrow" aria-hidden="true">→</div>
+
+            </a>
+
+            <a href="projects/three-phase-energy-meter.html" class="list-card">
+
+                <div class="list-card-body">
+                    <div class="list-card-title">
+                        IoT Enabled Low Cost Three Phase Energy Meter
+                        Using ADE7758
+                    </div>
+                    <div class="list-card-meta">Patent ID: 202341087967 · Filed</div>
+                </div>
+
+                <div class="list-card-arrow" aria-hidden="true">→</div>
+
+            </a>
+
+            <div class="list-card">
+
+                <div class="list-card-body">
+                    <div class="list-card-title">
+                        IoT-Based Low Power Low-Cost Occupancy
+                        Detection and Reporting System
+                    </div>
+                    <div class="list-card-meta">Patent ID: 202441027625 · Filed</div>
+                </div>
+
+            </div>
+
+            <div class="list-card">
+
+                <div class="list-card-body">
+                    <div class="list-card-title">
+                        A System for Monitoring Energy and Power
+                        Quality for Industrial Applications
+                    </div>
+                    <div class="list-card-meta">Patent ID: 202441042483 · Filed</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         INTERESTS
+    ========================================== -->
+
+    <section class="section" id="interests">
+
+        <h2 class="page-title">
+            Interests
+        </h2>
+
+        <ul class="interest-tags" aria-label="Research and technical interests">
+            <li class="interest-tag">Vibrotactile Interfaces</li>
+            <li class="interest-tag">Assistive Technology</li>
+            <li class="interest-tag">Accessible Computing</li>
+            <li class="interest-tag">Non-Visual Information Representation</li>
+            <li class="interest-tag">Accessible Educational Technology</li>
+            <li class="interest-tag">Data Visualisation for Blind and Low-Vision People</li>
+            <li class="interest-tag">Human-Computer Interaction</li>
+            <li class="interest-tag">AI / LLM-Assisted Accessibility</li>
+            <li class="interest-tag">Embedded Systems</li>
+            <li class="interest-tag">Hardware Design</li>
+            <li class="interest-tag">PCB Design &amp; Reverse Engineering</li>
+            <li class="interest-tag">Internet of Things (IoT)</li>
+        </ul>
+
+    </section>
+
+
+    <!-- =========================================
+         CONTACT
+    ========================================== -->
+
+    <section class="section" id="contact">
+
+        <h2 class="page-title">
+            Contact
+        </h2>
+
+        <p class="page-subtitle">Happy to talk about research, collaboration or hardware. Email is the best way to reach me.</p>
+
+        <dl class="contact-simple">
+            <div>
+                <dt>Email</dt>
+                <dd>
+                    <span><a href="mailto:udaynath1426@gmail.com">udaynath1426@gmail.com</a></span>
+                    <span><a href="mailto:p20240026@goa.bits-pilani.ac.in">p20240026@goa.bits-pilani.ac.in</a> (academic)</span>
+                </dd>
+            </div>
+            <div>
+                <dt>Phone</dt>
+                <dd><a href="tel:+917672003890">+91 76720 03890</a></dd>
+            </div>
+            <div>
+                <dt>Office</dt>
+                <dd>D-232, EEE Department, BITS Pilani, K. K. Birla Goa Campus · <a href="https://maps.app.goo.gl/XStbWrSpFqwAPcCZ7" target="_blank" rel="noopener">View on map<span class="sr-only"> (opens in a new tab)</span></a></dd>
+            </div>
+            <div>
+                <dt>Online</dt>
+                <dd><a href="https://www.linkedin.com/in/uday-nath-gunda-813862205/" target="_blank" rel="noopener">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a> · <a href="https://github.com/Uday-1426" target="_blank" rel="noopener">GitHub<span class="sr-only"> (opens in a new tab)</span></a></dd>
+            </div>
+        </dl>
+
+    </section>
+
+    <p id="new-tab-note" class="sr-only">Opens in a new tab</p>
+
+
+    </main>
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+        <span>Gunda Uday Nath</span>
+
+        <span>PhD Researcher · BITS Pilani</span>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
